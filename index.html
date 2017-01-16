@@ -196,7 +196,7 @@ limitations under the License.
             document.getElementById('quickstart-verify-email').disabled = false;
           }
           // Add user to CURRENT_USERS
-          var adaNameRef = firebase.database().ref('users/ada/name');
+          var adaNameRef = firebase.database().ref('users/' + uid);
           adaNameRef.child('first').set('Ada');
           adaNameRef.child('last').set('Lovelace');
 
