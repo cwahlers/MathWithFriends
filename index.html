@@ -196,7 +196,9 @@ limitations under the License.
             document.getElementById('quickstart-verify-email').disabled = false;
           }
           // Add user to CURRENT_USERS
-          var newUserRef = currentUserRef.push(uid, onComplete);
+          console.log('Uid: ', uid);
+          console.log('User: ', user);
+          var newUserRef = currentUserRef.push(uid);
           newUserRef.set({
             'active': true,
             'lastLogon' : '2017-01-15'
