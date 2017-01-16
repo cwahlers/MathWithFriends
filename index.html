@@ -226,7 +226,7 @@ limitations under the License.
         } else {
           // User is signed out.
 
-          var UserRef = firebase.database().ref('users/' + uid)''
+          var UserRef = firebase.database().ref('users/' + uid);
           UserRef.set({
             'active': false,
             'lastLogon' : '2017-01-16'
