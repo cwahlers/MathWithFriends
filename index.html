@@ -63,6 +63,12 @@ limitations under the License.
     function toggleSignIn() {
       if (firebase.auth().currentUser) {
         // [START signout]
+        var UserRef = firebase.database().ref('users/' + uid);
+          UserRef.set({
+            'active': false,
+            'lastLogon' : '2017-01-16'
+          });
+
         firebase.auth().signOut();
         // [END signout]
       } else {
@@ -218,7 +224,7 @@ limitations under the License.
           var UserRef = firebase.database().ref('users/' + uid);
           UserRef.set({
             'active': true,
-            'lastLogon' : '2017-01-15'
+            'lastLogon' : '2017-01-14'
           });
           // Authenticated go to game
           //window.location.href = "https://guarded-beyond-34880.herokuapp.com/game.html";
@@ -226,12 +232,7 @@ limitations under the License.
         } else {
           // User is signed out.
 
-          var UserRef = firebase.database().ref('users/' + uid);
-          UserRef.set({
-            'active': false,
-            'lastLogon' : '2017-01-16'
-          });
-
+          
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
