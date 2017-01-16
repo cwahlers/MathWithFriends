@@ -51,7 +51,7 @@ limitations under the License.
     firebase.initializeApp(config);
 
     var database = firebase.database();
-    var currentUserRef = database.ref('current_users');
+    //var currentUserRef = database.ref('current_users');
     //var newUserRef = currentUserRef.push();
   </script>
 
@@ -215,8 +215,8 @@ limitations under the License.
 
           console.log('Uid: ', uid);
           console.log('User: ', user);
-          var newUserRef = currentUserRef.push(uid);
-          newUserRef.set({
+          var UserRef = firebase.database().ref('users/' + uid)''
+          UserRef.set({
             'active': true,
             'lastLogon' : '2017-01-15'
           });
@@ -226,14 +226,11 @@ limitations under the License.
         } else {
           // User is signed out.
 
-          // var adaRef = firebase.database().ref('users/ada');
-          // adaRef.remove()
-          //   .then(function() {
-          //     console.log("Remove succeeded.")
-          //   })
-          //   .catch(function(error) {
-          //     console.log("Remove failed: " + error.message)
-          //   });
+          var UserRef = firebase.database().ref('users/' + uid)''
+          UserRef.set({
+            'active': false,
+            'lastLogon' : '2017-01-16'
+          });
 
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
