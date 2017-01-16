@@ -215,7 +215,7 @@ limitations under the License.
 
           console.log('Uid: ', uid);
           console.log('User: ', user);
-          var UserRef = firebase.database().ref('users/' + uid)''
+          var UserRef = firebase.database().ref('users/' + uid);
           UserRef.set({
             'active': true,
             'lastLogon' : '2017-01-15'
