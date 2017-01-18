@@ -115,13 +115,9 @@ limitations under the License.
       // Listening for auth state changes.
       // [START authstatelistener]
       debugger;
-      firebase.auth().onAuthStateChanged(function(user) {
-        // [START_EXCLUDE silent]
-        //document.getElementById('quickstart-verify-email').disabled = true;
-        // [END_EXCLUDE]
-
+      if (firebase.auth().currentUser){
         //*****************************************
-        //  Update train table when new train added
+        //  Update users table when new user added
         //*****************************************
           database.ref().on("child_changed", function(childSnapshot, prevChildKey) {
             //console.log(childSnapshot.val());
@@ -129,6 +125,14 @@ limitations under the License.
             console.log('Users' , users);
             displayTable(users);
           });
+      }
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        // [START_EXCLUDE silent]
+        //document.getElementById('quickstart-verify-email').disabled = true;
+        // [END_EXCLUDE]
+
+        
 
         if (user) {
           // User is signed in.
