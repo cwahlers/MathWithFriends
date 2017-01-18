@@ -119,7 +119,7 @@ limitations under the License.
         //*****************************************
         //  Update users table when new user added
         //*****************************************
-          database.ref().on("child_changed", function(childSnapshot, prevChildKey) {
+          database.ref().on("child_added", function(childSnapshot, prevChildKey) {
             //console.log(childSnapshot.val());
             var users = childSnapshot.val();
             console.log('Users' , users);
