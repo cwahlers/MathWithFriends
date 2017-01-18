@@ -115,7 +115,7 @@ limitations under the License.
       // Listening for auth state changes.
       // [START authstatelistener]
       debugger;
-      if (firebase.auth().currentUser){
+      
         //*****************************************
         //  Update users table when new user added
         //*****************************************
@@ -125,7 +125,7 @@ limitations under the License.
             console.log('Users' , users);
             displayTable(users);
           });
-      }
+      
 
       firebase.auth().onAuthStateChanged(function(user) {
         // [START_EXCLUDE silent]
