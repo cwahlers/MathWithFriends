@@ -207,10 +207,8 @@ limitations under the License.
           }
           // Add user to CURRENT_USERS
           var adaNameRef = firebase.database().ref('users/' + uid);
-          adaNameRef.child('first').set('Ada');
-          adaNameRef.child('last').set('Lovelace');
-
-          adaNameRef.set({ first: 'Bad', last: 'Luck' });
+          //adaNameRef.child('first').set('Ada');
+          //adaNameRef.child('last').set('Lovelace');
 
           adaNameRef.set({ first: 'Chris', last: 'Scott' })
           .then(function() {
