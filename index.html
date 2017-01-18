@@ -64,16 +64,19 @@ limitations under the License.
      * Handles the sign in button press.
      */
     function toggleSignIn() {
+      debugger;
       if (firebase.auth().currentUser) {
         // [START signout]
         console.log('Uid: ', uid);
+        debugger;
         var UserRef = firebase.database().ref('users/' + uid);
           UserRef.set({
             'active': false,
             'lastLogon' : '2017-01-16'
           });
+          debugger;
+          firebase.auth().signOut();
 
-        firebase.auth().signOut();
         // [END signout]
       } else {
         var email = document.getElementById('email').value;
