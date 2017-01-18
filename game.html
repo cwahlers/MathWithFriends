@@ -120,7 +120,7 @@ limitations under the License.
         //  Update users table when new user added
         //*****************************************
         console.log("Database: ", database);
-
+        debugger;
         var userRef = database.ref("users");
             userRef.once("value").then(function(snapshot) {
               console.log(snapshot.val());
