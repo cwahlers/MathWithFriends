@@ -137,12 +137,12 @@ limitations under the License.
           var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed In';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-          if (!emailVerified) {
-            document.getElementById('quickstart-verify-email').disabled = false;
-          }
+          // if (!emailVerified) {
+          //   document.getElementById('quickstart-verify-email').disabled = false;
+          // }
           // Add user to CURRENT_USERS
           var adaNameRef = firebase.database().ref('users/' + uid);
           adaNameRef.child('first').set('Ada');
@@ -176,13 +176,14 @@ limitations under the License.
 
           
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed In';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
           document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
-        document.getElementById('quickstart-sign-in').disabled = false;
+        //document.getElementById('quickstart-sign-in').disabled = false;
+        document.getElementById('quickstart-sign-in').enabled = false;
         // [END_EXCLUDE]
       });
       // [END authstatelistener]
