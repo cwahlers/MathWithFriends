@@ -117,29 +117,29 @@ limitations under the License.
       debugger;
 
         // Initialize Firebase
-    var config = {
+    var config2 = {
       apiKey: "AIzaSyCHJy808GwjwSpuZWBVkHYsVVxEGeUuotI",
       authDomain: "mathwithfriends-155015.firebaseapp.com",
       databaseURL: "https://mathwithfriends-155015.firebaseio.com",
       storageBucket: "mathwithfriends-155015.appspot.com",
       messagingSenderId: "180901623614"
     };
-    firebase.initializeApp(config);
+    firebase.initializeApp(config2);
 
-    var database = firebase.database();
+    var database2 = firebase.database();
       
         //*****************************************
         //  Update users table when new user added
         //*****************************************
-        console.log("Database: ", database);
+        console.log("Database: ", database2);
         debugger;
-        var userRef = database.ref("users");
+        var userRef = database2.ref("users");
             userRef.once("value").then(function(snapshot) {
               console.log(snapshot.val());
             });
           
 
-          database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+          database2.ref().on("child_added", function(childSnapshot, prevChildKey) {
             //console.log(childSnapshot.val());
             var users = childSnapshot.val();
             console.log('Users' , users);
