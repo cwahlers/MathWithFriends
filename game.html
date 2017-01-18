@@ -133,7 +133,7 @@ limitations under the License.
         //*****************************************
         console.log("Database: ", database2);
         debugger;
-        var userRef = database2.ref("users");
+        var userRef = database2.ref('users/');
             userRef.once("value").then(function(snapshot) {
               console.log(snapshot.val());
             });
