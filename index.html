@@ -66,7 +66,7 @@ limitations under the License.
     function toggleSignIn() {
       debugger;
       if (firebase.auth().currentUser) {
-        [START signout]
+        //[START signout]
         console.log('Uid: ', firebase.auth().currentUser.uid);
         debugger;
         var UserRef = firebase.database().ref('users/' + firebase.auth().currentUseruid);
