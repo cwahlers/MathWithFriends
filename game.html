@@ -64,12 +64,12 @@ limitations under the License.
     () {
       if (firebase.auth().currentUser) {
         // [START signout]
-        console.log('Uid: ', uid);
-        var UserRef = firebase.database().ref('users/' + uid);
-          UserRef.set({
-            'active': false,
-            'lastLogon' : '2017-01-16'
-          });
+        // console.log('Uid: ', uid);
+        // var UserRef = firebase.database().ref('users/' + uid);
+        //   UserRef.set({
+        //     'active': false,
+        //     'lastLogon' : '2017-01-16'
+        //   });
 
         firebase.auth().signOut();
         // [END signout]
