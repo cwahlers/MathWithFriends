@@ -66,14 +66,14 @@ limitations under the License.
     function toggleSignIn() {
       debugger;
       if (firebase.auth().currentUser) {
-        // [START signout]
-        //console.log('Uid: ', uid);
-        // debugger;
-        // var UserRef = firebase.database().ref('users/' + uid);
-        //   UserRef.set({
-        //     'active': false,
-        //     'lastLogon' : '2017-01-16'
-        //   });
+        [START signout]
+        console.log('Uid: ', firebase.auth().currentUser.uid);
+        debugger;
+        var UserRef = firebase.database().ref('users/' + firebase.auth().currentUseruid);
+          UserRef.set({
+            'active': false,
+            'lastLogon' : '2017-01-16'
+          });
           debugger;
           firebase.auth().signOut();
 
