@@ -124,6 +124,12 @@ limitations under the License.
             //console.log(childSnapshot.val());
             var users = childSnapshot.val();
             console.log('Users' , users);
+
+            var userRef = database.ref("users");
+            userRef.once("value").then(function(snapshot) {
+              console.log(snapshot.val());
+            });
+
             displayTable(users);
           });
       
