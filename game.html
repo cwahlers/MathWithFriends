@@ -114,6 +114,7 @@ limitations under the License.
     function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
+      debugger;
       firebase.auth().onAuthStateChanged(function(user) {
         // [START_EXCLUDE silent]
         //document.getElementById('quickstart-verify-email').disabled = true;
@@ -125,6 +126,7 @@ limitations under the License.
           database.ref().on("child_changed", function(childSnapshot, prevChildKey) {
             //console.log(childSnapshot.val());
             var users = childSnapshot.val();
+            console.log('Users' , users);
             displayTable(users);
           });
 
@@ -138,9 +140,9 @@ limitations under the License.
           var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed In';
+          //document.getElementById('quickstart-sign-in-status').textContent = 'Signed In';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           // if (!emailVerified) {
           //   document.getElementById('quickstart-verify-email').disabled = false;
           // }
@@ -177,9 +179,9 @@ limitations under the License.
 
           
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed In';
+          //document.getElementById('quickstart-sign-in-status').textContent = 'Signed In';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-          document.getElementById('quickstart-account-details').textContent = 'null';
+          //document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
